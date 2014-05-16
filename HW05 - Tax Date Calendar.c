@@ -28,21 +28,7 @@ int main()
     return(0);
 }
 
-/***************************************************************************
-*
-*     Function Information
-*
-*     Name of Function: getdata
-*
-*     Function Return Type: int
-*
-*     Parameters (list data type, name, and comment one per line):
-*       1. None
-*
-*     Function Description: Prompts the user to input the year they wish
-*     to know the tax day of.
-*
-***************************************************************************/
+//Prompts the user to input the year they wish to know the tax day of.
 int getInput()
 {
     int year = 0; //The given year.
@@ -54,27 +40,11 @@ int getInput()
     return(year);
 }
 
-/***************************************************************************
-*
-*     Function Information
-*
-*     Name of Function: checkLeapStatus
-*
-*     Function Return Type: void
-*
-*     Parameters (list data type, name, and comment one per line):
-*       1. int year:        The year of the tax day.
-*       2. int* num_days:   The number of days in current year.
-*       3. int* num_days_l: The number of days in last year.
-*
-*     Function Description: Calculates the amount of days in the user's
-*     given year and the year before that.
-*
-***************************************************************************/
+//Calculates the amount of days in the user's given year and the year before that.
 void checkLeapStatus(int year, int* num_days, int* num_days_l)
 {
-    //If the year divided by 4 has no remainer and the year divided by 100 has
-    //a remainer OR the year divided by 100 has a remainder, amount of days in
+    //If the year divided by 4 has no remainder and the year divided by 100 has
+    //a remainder OR the year divided by 100 has a remainder, amount of days in
     //the year is 366.  Otherwise, it is 365.
     if ((!(year % 4) && (year % 100)) || !(year % 100))
     {
@@ -101,22 +71,7 @@ void checkLeapStatus(int year, int* num_days, int* num_days_l)
     return;
 }
 
-/***************************************************************************
-*
-*     Function Information
-*
-*     Name of Function: calcDay
-*
-*     Function Return Type: int
-*
-*     Parameters (list data type, name, and comment one per line):
-*       1. int year:       The year of the tax day.
-*       2. int num_days_l: The number of days in the previous year.
-*
-*     Function Description: Determines what day it was on december 31st of
-*     the previous year.
-*
-***************************************************************************/
+//Determines what day it was on December 31st of the previous year.
 int calcDay(int year, int num_days_l)
 {
      int day = 0; //The day of December 31st of the previous year.
@@ -128,21 +83,7 @@ int calcDay(int year, int num_days_l)
      return(day);
 }
 
-/***************************************************************************
-*
-*     Function Information
-*
-*     Name of Function: calcTaxDay
-*
-*     Function Return Type: int
-*
-*     Parameters (list data type, name, and comment one per line):
-*       1. int day:      Day on dec 31 of prior year.
-*       2. int num_days: The number of days in the current year.
-*
-*     Function Description: Determines what day it is on April 15th.
-*
-***************************************************************************/
+//Determines what day it is on April 15th.
 int calcTaxDay(int day, int num_days)
 {
     int tax_day = 0; //The day on April 15th.
@@ -169,21 +110,7 @@ int calcTaxDay(int day, int num_days)
     return(tax_day);
 }
 
-/***************************************************************************
-*
-*     Function Information
-*
-*     Name of Function: displayResults
-*
-*     Function Return Type: void
-*
-*     Parameters (list data type, name, and comment one per line):
-*       1. int tax_day: The day on April 15th of the current year.
-*       2. int year:    The year of the tax day.
-*
-*     Function Description: Prints out the day one which taxes are collected.
-*
-***************************************************************************/
+//Prints out the day one which taxes are collected.
 void displayResults(int tax_day, int year)
 {
     //Prints the first part of the text, restating the user's given year.
