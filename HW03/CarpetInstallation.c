@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//Prototypes go here
 void getInput(int*, int*, int*, float*);
 float calcInstalledPrice(int, int, float);
 float calcSubtotal(float, int);
@@ -32,8 +33,8 @@ int main() {
     return(0);
 }
 
-void getInput(int* length, int* width, int* discount, float* costSF)
-{
+//Gets carpet dimensions from the user
+void getInput(int* length, int* width, int* discount, float* costSF) {
     printf("\nEnter the length of the room: ");
     scanf("%d", length);
     printf("Enter the width of the room: ");
@@ -42,11 +43,12 @@ void getInput(int* length, int* width, int* discount, float* costSF)
     scanf("%d", discount);
     printf("Enter the cost per square foot: ");
     scanf("%f", costSF);
+    
     return;
 }
 
-float calcInstalledPrice(int length, int width, float costSF) \
-{
+//Calculates price of carpet installation
+float calcInstalledPrice(int length, int width, float costSF) {
     float installPrice = 0;  //Price of installation.
     installPrice = (length * width) * costSF;
     installPrice += (length * width) * 0.35;
@@ -54,25 +56,24 @@ float calcInstalledPrice(int length, int width, float costSF) \
     return(installPrice);
 }
 
-
-float calcSubtotal(float installPrice, int discount)
-{
+//Calculates price with discount
+float calcSubtotal(float installPrice, int discount) {
     float subtotal = 0;  //Subtotal cost.
     subtotal = installPrice - (installPrice * ((float) discount / 100));
 
     return(subtotal);
 }
 
-float calcTotal(float subtotal)
-{
+//Calculates total price
+float calcTotal(float subtotal) {
     float total = 0;  //Total cost.
     total = subtotal + (subtotal * .085);
 
     return(total);
 }
 
-void printMeasure(int length, int width)
-{
+//Prints user dimensions
+void printMeasure(int length, int width) {
     printf("\n            MEASUREMENT\n");
     printf("Length%25.0d ft", length);
     printf("\nWidth %25.0d ft", width);
@@ -81,8 +82,8 @@ void printMeasure(int length, int width)
     return;
 }
 
-void printCharges(int length, int width, float costSF, float installPrice, int discount, float subtotal, float total)
-{
+//Prints carpet installation receipt
+void printCharges(int length, int width, float costSF, float installPrice, int discount, float subtotal, float total) {
     printf("\n\n              CHARGES\n");
     printf("\nDESCRIPTION  COST/SQ.FT.      CHARGE");
     printf("\n-----------  -----------  ----------");
