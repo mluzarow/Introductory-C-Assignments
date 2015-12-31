@@ -1,1 +1,0 @@
-Programs from my first programming class.
