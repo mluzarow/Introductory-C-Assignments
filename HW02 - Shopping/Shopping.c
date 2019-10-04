@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main() {
+    double taxPercent=0;  //Stores tax percentage value.
     int tv = 0;         //Stores amount of televisions.
     int br_player = 0;  //Stores amount of Blu-ray players.
     int remote = 0;     //Stores amount of remote controls.
@@ -12,8 +13,13 @@ int main() {
     const float MP3_PLAYER = 44.99;  //Sets price of MP3 player.
     const float LAPTOP = 349.99;     //Sets price of laptop.
 
+    // Gathers the tax percentage value.
+    printf("Enter the tax percentage value (a float number from 0 to 100): ");
+    scanf("%lf", &taxPercent);
+    taxPercent/=100;
+
     //Gathers the amount of televisions the user wishes to buy.
-    printf("\nEnter the quantity of televisions: ");
+    printf("Enter the quantity of televisions: ");
     scanf("%d", &tv);
     //Gathers the amount of Blu-ray players the user wishes to buy.
     printf("Enter the quantity of Blu-ray players: ");
@@ -42,11 +48,11 @@ int main() {
     //Prints part of the text frame.
     printf("\n                                  -----------");
 
-    //Prints the calculated price totals with and without tax (7%) according to the text frame.
+    //Prints the calculated price totals with and without the user-defined tax value according to the text frame.
     printf("\n                        Subtotal  $%10.2f", TV*tv + BR_PLAYER*br_player + REMOTE*remote + MP3_PLAYER*mp3_player + LAPTOP*laptop);
-    printf("\n                             Tax  $%10.2f", (BR_PLAYER*br_player + REMOTE*remote + MP3_PLAYER*mp3_player + LAPTOP*laptop) * .07);
-    printf("\n                           Total  $%10.2f", (BR_PLAYER*br_player + REMOTE*remote + MP3_PLAYER*mp3_player + LAPTOP*laptop) * 1.07);
+    printf("\n                             Tax  $%10.2f", (BR_PLAYER*br_player + REMOTE*remote + MP3_PLAYER*mp3_player + LAPTOP*laptop) * taxPercent);
+    printf("\n                           Total  $%10.2f", (BR_PLAYER*br_player + REMOTE*remote + MP3_PLAYER*mp3_player + LAPTOP*laptop) * (1+taxPercent));
     printf("\n");
 
     return(0);
-} //main
+}
