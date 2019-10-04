@@ -30,7 +30,7 @@ int main() {
     //Prints the charges section.
     printCharges(length, width, costSF, installPrice, discount, subtotal, total);
 
-    return(0);
+    return 0;
 }
 
 //Gets carpet dimensions from the user
@@ -43,8 +43,6 @@ void getInput(int* length, int* width, int* discount, float* costSF) {
     scanf("%d", discount);
     printf("Enter the cost per square foot: ");
     scanf("%f", costSF);
-    
-    return;
 }
 
 //Calculates price of carpet installation
@@ -77,8 +75,6 @@ void printMeasure(int length, int width) {
     printf("Length%25.0d ft", length);
     printf("\nWidth %25.0d ft", width);
     printf("\nArea  %25.0d square ft", length * width);
-
-    return;
 }
 
 //Prints carpet installation receipt
@@ -94,6 +90,4 @@ void printCharges(int length, int width, float costSF, float installPrice, int d
     printf("\nSUBTOTAL                  $%9.2f", subtotal);
     printf("\nTax                       $%9.2f", subtotal * 0.085);
     printf("\nTOTAL                     $%9.2f\n\n", total);
-
-    return;
 }
