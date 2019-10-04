@@ -35,11 +35,11 @@ int main() {
 
 //Gets carpet dimensions from the user
 void getInput(int* length, int* width, int* discount, float* costSF) {
-    printf("\nEnter the length of the room: ");
+    printf("\nEnter the length of the room (in ft): ");
     scanf("%d", length);
-    printf("Enter the width of the room: ");
+    printf("Enter the width of the room (in ft): ");
     scanf("%d", width);
-    printf("Enter the customer discount: ");
+    printf("Enter the customer discount (a percent value from 0 to 100): ");
     scanf("%d", discount);
     printf("Enter the cost per square foot: ");
     scanf("%f", costSF);
@@ -50,8 +50,7 @@ void getInput(int* length, int* width, int* discount, float* costSF) {
 //Calculates price of carpet installation
 float calcInstalledPrice(int length, int width, float costSF) {
     float installPrice = 0;  //Price of installation.
-    installPrice = (length * width) * costSF;
-    installPrice += (length * width) * 0.35;
+    installPrice = ((length * width) * costSF)+ ((length * width)*0.35);
 
     return(installPrice);
 }
